@@ -17,7 +17,7 @@
 		79270C7425AC74A30025B9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79270C4825AC74A30025B9DD /* Assets.xcassets */; };
 		79270C8825AC756F0025B9DD /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 79270C8725AC756F0025B9DD /* landmarkData.json */; };
 		79270C9425AC76990025B9DD /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79270C9325AC76990025B9DD /* Landmark.swift */; };
-		79270CA825AC7BE30025B9DD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79270CA725AC7BE30025B9DD /* Data.swift */; };
+		79270CA825AC7BE30025B9DD /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79270CA725AC7BE30025B9DD /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		79270C6E25AC74A30025B9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79270C8725AC756F0025B9DD /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		79270C9325AC76990025B9DD /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
-		79270CA725AC7BE30025B9DD /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		79270CA725AC7BE30025B9DD /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +92,9 @@
 		79270C4025AC74A30025B9DD = {
 			isa = PBXGroup;
 			children = (
-				79270CA725AC7BE30025B9DD /* Data.swift */,
-				79270C9325AC76990025B9DD /* Landmark.swift */,
-				79270C8725AC756F0025B9DD /* landmarkData.json */,
+				79270CAF25AC7E500025B9DD /* Resources */,
+				79270CAE25AC7E3B0025B9DD /* Model */,
+				79270CAD25AC7E100025B9DD /* Views */,
 				79270C4525AC74A30025B9DD /* Shared */,
 				79270C4F25AC74A30025B9DD /* iOS */,
 				79270C5625AC74A30025B9DD /* macOS */,
@@ -108,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				79270C4625AC74A30025B9DD /* landmarksApp.swift */,
-				79270C4725AC74A30025B9DD /* ContentView.swift */,
 				79270C4825AC74A30025B9DD /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -158,6 +157,31 @@
 				79270C6E25AC74A30025B9DD /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		79270CAD25AC7E100025B9DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79270C4725AC74A30025B9DD /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		79270CAE25AC7E3B0025B9DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79270C9325AC76990025B9DD /* Landmark.swift */,
+				79270CA725AC7BE30025B9DD /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79270CAF25AC7E500025B9DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79270C8725AC756F0025B9DD /* landmarkData.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +345,7 @@
 				79270C7125AC74A30025B9DD /* ContentView.swift in Sources */,
 				79270C6F25AC74A30025B9DD /* landmarksApp.swift in Sources */,
 				79270C9425AC76990025B9DD /* Landmark.swift in Sources */,
-				79270CA825AC7BE30025B9DD /* Data.swift in Sources */,
+				79270CA825AC7BE30025B9DD /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

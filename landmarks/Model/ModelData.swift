@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  ModelData.swift
 //  landmarks (iOS)
 //
 //  Created by Maijuriina Mustonen on 11/01/2021.
