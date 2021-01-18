@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
-// landmarks-array initialised from json-file
-var landmarks: [Landmark] = load("landmarkData.json")
+final class ModelData: ObservableObject { // SwiftUI subscribes to observable object and updates any views that need refreshing when data changes - Published attribute for the array allows subscribers to pick up changes
+    @Published var landmarks: [Landmark] = load("landmarkData.json") // landmarks-array initialised from json-file
+}
 
 // load _: method fetches JSON data with a given name from the main bundle
 // requires return type's Codable-protocol
