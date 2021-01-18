@@ -13,8 +13,8 @@ struct LandmarkList: View {
             List(landmarks) { // create List, which is passed landmarks
                 landmark in
                     NavigationLink(destination: LandmarkDetail(landmark: landmark)) { // pass current landmark to destination
-                        LandmarkRow(landmark: landmark)
-                    }
+                    LandmarkRow(landmark: landmark)
+                }
             }
             .navigationTitle("Landmarks")
         }
@@ -23,6 +23,10 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList()
+        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
+            LandmarkList()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
     }
 }
