@@ -18,10 +18,15 @@ struct LandmarkList: View {
     
     var body: some View {
         NavigationView {
-            List(filteredLandmarks) { // create List, which is passed landmarks
-                landmark in
+            List { // adding isOn-toggle as first child of list binds to show FavoritesOnly
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(filteredLandmarks) { landmark in // combine static/dynamic views in a list with ForEach type instead of collection of data
                     NavigationLink(destination: LandmarkDetail(landmark: landmark)) { // pass current landmark to destination
-                    LandmarkRow(landmark: landmark)
+                        LandmarkRow(landmark: landmark)
+                    }
                 }
             }
             .navigationTitle("Landmarks")
