@@ -18,6 +18,11 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer() // adds space at the end of horizontal stack
+            
+            if landmark.isFavorite { // in SwiftUI use if statement to conditionally include views
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+            }
         }
         
     }
