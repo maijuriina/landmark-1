@@ -9,9 +9,14 @@ import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        List(landmarks) { // create List, which is passed landmarks
-            landmark in
-            LandmarkRow(landmark: landmark)
+        NavigationView {
+            List(landmarks) { // create List, which is passed landmarks
+                landmark in
+                    NavigationLink(destination: LandmarkDetail(landmark: landmark)) { // pass current landmark to destination
+                        LandmarkRow(landmark: landmark)
+                    }
+            }
+            .navigationTitle("Landmarks")
         }
     }
 }
