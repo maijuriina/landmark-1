@@ -16,6 +16,7 @@ struct LandmarkList: View {
             (!showFavoritesOnly || landmark.isFavorite) // check showFavOnly property and each .isFavorite-value
         }
     }
+
     
     var body: some View {
         NavigationView {
@@ -29,11 +30,11 @@ struct LandmarkList: View {
                         LandmarkRow(landmark: landmark)
                     }
                 }
+                //.onDelete(perform: deleteLandmark)
             }
             .navigationTitle("Landmarks")
         }
     }
-}
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
@@ -44,4 +45,5 @@ struct LandmarkList_Previews: PreviewProvider {
                 // .previewDisplayName(deviceName)
         //}
     }
+}
 }

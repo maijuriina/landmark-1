@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LandmarkDetail: View {
     @EnvironmentObject var modelData : ModelData
+    /*@Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingDeleteAlert = false*/
+
     var landmark: Landmark // adds Landmark-property to LandmarkDetail-type, allowing access to Landmark data for custom types
     
     var landmarkIndex: Int {
@@ -31,6 +35,7 @@ struct LandmarkDetail: View {
                         .font(.title)
                         .foregroundColor(.primary)
                     FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite) // provide binding to isFavorite with $
+                    DeleteButton()
                 }
 
                 HStack {
@@ -50,8 +55,36 @@ struct LandmarkDetail: View {
             .padding()
         }
         .navigationTitle(landmark.name) // gives navigation bar a title when showing detail view
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.automatic)
+        
+        
+        /*Button(action: {
+            self.showingAlert = true
+        }) {
+            Text("Show Alert")
+                .font(.title)
+                .foregroundColor(Color.white)
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Delete")))
+        }*/
+        /*.alert(isPresented: $showingDeleteAlert) {
+            Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton:                        .destructive(Text("Delete")) {
+                    self.deleteLandmark()
+                }, secondaryButton: .cancel()
+            )
+        }
+        .navigationBarItems(trailing: Button(action: {
+            self.showingDeleteAlert = true
+        }) {
+            Image(systemName: "trash")
+        })*/
     }
+    
+    /*func deleteLandmark() {
+        moc.delete(landmark)
+        presentationMode.wrappedValue.dismiss()
+    }*/
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
@@ -60,5 +93,6 @@ struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkDetail(landmark: ModelData().landmarks[0])
             .environmentObject(modelData)
+    
     }
 }
