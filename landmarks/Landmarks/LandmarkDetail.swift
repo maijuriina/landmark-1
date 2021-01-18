@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    @EnvironmentObject var modelData : ModelData
     var landmark: Landmark // adds Landmark-property to LandmarkDetail-type, allowing access to Landmark data for custom types
+    
+    var landmarkIndex: Int {
+        modelData.landmarks.firstIndex(where: { $0.id == landmark.id})! // compute index of input landmark by comparing with modelData
+    }
     
     var body: some View {
         ScrollView { // ScrollView lets user scroll through descriptive content
@@ -21,9 +26,13 @@ struct LandmarkDetail: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text(landmark.name)
-                    .font(.title)
-                    .foregroundColor(.primary)
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                        .foregroundColor(.primary)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite) // provide binding to isFavorite with $
+                }
+
                 HStack {
                     Text(landmark.park)
                     Spacer()
@@ -46,7 +55,10 @@ struct LandmarkDetail: View {
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
+    static let modelData = ModelData()
+    
     static var previews: some View {
         LandmarkDetail(landmark: ModelData().landmarks[0])
+            .environmentObject(modelData)
     }
 }
