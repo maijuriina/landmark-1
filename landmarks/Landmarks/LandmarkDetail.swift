@@ -9,9 +9,6 @@ import SwiftUI
 
 struct LandmarkDetail: View {
     @EnvironmentObject var modelData : ModelData
-    /*@Environment(\.managedObjectContext) var moc
-    @Environment(\.presentationMode) var presentationMode
-    @State private var showingDeleteAlert = false*/
 
     var landmark: Landmark // adds Landmark-property to LandmarkDetail-type, allowing access to Landmark data for custom types
     

@@ -19,7 +19,7 @@ struct DeleteButton: View {
                 .foregroundColor(.red)
         }
          .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Delete")))
+            Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Delete")))
         }
     }
 }
