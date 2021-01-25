@@ -57,34 +57,8 @@ struct LandmarkDetail: View {
         .navigationTitle(landmark.name) // gives navigation bar a title when showing detail view
         .navigationBarTitleDisplayMode(.automatic)
         
-        
-        /*Button(action: {
-            self.showingAlert = true
-        }) {
-            Text("Show Alert")
-                .font(.title)
-                .foregroundColor(Color.white)
-        }
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Delete")))
-        }*/
-        /*.alert(isPresented: $showingDeleteAlert) {
-            Alert(title: Text("Delete landmark"), message: Text("Are you sure?"), primaryButton:                        .destructive(Text("Delete")) {
-                    self.deleteLandmark()
-                }, secondaryButton: .cancel()
-            )
-        }
-        .navigationBarItems(trailing: Button(action: {
-            self.showingDeleteAlert = true
-        }) {
-            Image(systemName: "trash")
-        })*/
     }
     
-    /*func deleteLandmark() {
-        moc.delete(landmark)
-        presentationMode.wrappedValue.dismiss()
-    }*/
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {

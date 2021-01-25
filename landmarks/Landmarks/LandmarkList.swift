@@ -30,7 +30,7 @@ struct LandmarkList: View {
                         LandmarkRow(landmark: landmark)
                     }
                 }
-                //.onDelete(perform: deleteLandmark)
+                .onDelete(perform: delete)
             }
             .navigationTitle("Landmarks")
         }
@@ -46,4 +46,8 @@ struct LandmarkList_Previews: PreviewProvider {
         //}
     }
 }
+    func delete(at offsets: IndexSet) {
+        modelData.landmarks.remove(atOffsets: offsets)
+    }
+    
 }
