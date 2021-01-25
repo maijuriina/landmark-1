@@ -13,10 +13,7 @@ struct LandmarkDetail: View {
     var landmark: Landmark // adds Landmark-property to LandmarkDetail-type, allowing access to Landmark data for custom types
     
     var landmarkIndex: Int {
-        if(modelData.landmarks.firstIndex(of: landmark) != nil) {
             modelData.landmarks.firstIndex(where: { $0.id == landmark.id})! // compute index of input landmark by comparing with modelData
-            }
-        return 0
         }
     
     var body: some View {
